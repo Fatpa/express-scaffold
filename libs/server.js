@@ -66,7 +66,7 @@ function Server(configs) {
     var host = settings.session.host || 'localhost';
     var username = settings.database.options.user || '';
     var password = settings.database.options.pass || '';
-    var port = _.isNumber(settings.session.port) ? parseInt(settings.database.port, 10) || 27017;
+    var port = _.isNumber(settings.session.port) ? parseInt(settings.database.port, 10) : 27017;
     settings.session.store = new mongoStore({ db: dbname, host: host, port: port, username: username, password: password });
   }
 
